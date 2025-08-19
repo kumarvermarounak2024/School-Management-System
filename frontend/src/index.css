@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600 &display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-playfair text-base;
+  }
+}
+/* Add this in index.css ya App.css me */
+.Toastify__toast--success {
+  background-color: #4CAF50 !important; /* Green color */
+  color: white !important;
+}

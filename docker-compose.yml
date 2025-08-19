@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3400:3400"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app
+    restart: always
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3300:3300"
+    # 🚫 volume hata diya to dist delete nahi hoga
+    restart: always
