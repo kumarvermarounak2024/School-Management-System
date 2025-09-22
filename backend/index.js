@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // ✅ Step 3 - Setup CORS
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://serene-jelly-f8d0f2.netlify.app", "http://103.174.102.139:3300", "https://school.manasvitech.in"],
+  origin: ["http://localhost:3300", "http://localhost:3400", "http://103.174.102.139:3300", "https://school.manasvitech.in"],
   credentials: true,
   optionSuccessStatus: 200,
 };
@@ -187,6 +187,10 @@ app.use("/api/user/auth", authUserRouter);
 app.use("/api/reports/Attendance", studentAttendanceReportRoutes);
 app.use("/api/certificates", certificateRoutes);
 
+// ✅ Step 7 - Root route (for testing/health check)
+app.get("/", (req, res) => {
+  res.send("Backend API is running 🚀");
+});
 
 const PORT = process.env.PORT || 4100;
 app.listen(PORT, () => {

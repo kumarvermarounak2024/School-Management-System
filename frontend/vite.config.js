@@ -17,6 +17,7 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 3300,
+    allowedHosts: ['school.manasvitech.in'],
   },
   // 👇 This makes sure build paths are relative (important if you host on IP/domain)
   base: './',
